@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.dagger.hilt.plugin)
+    alias(libs.plugins.kapt.plugin)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
@@ -59,6 +62,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.dagger.hilt)
+    implementation(libs.firebase.auth)
+    kapt(libs.dagger.hilt.compiler)
+    kapt(libs.dagger.hilt.android.compiler)
+    implementation(libs.dagger.hilt.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
